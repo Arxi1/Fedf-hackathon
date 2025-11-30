@@ -78,7 +78,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/Fedf-hackathon/">
       <div className="app-root">
         {role && <Navigation role={role} user={user} onLogout={handleLogout} />}
 

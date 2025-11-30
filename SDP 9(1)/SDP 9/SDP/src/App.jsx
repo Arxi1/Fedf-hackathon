@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, Link, useNavigate } from 'react-router-dom';
+import { Routes, Route, Navigate, Link, useNavigate } from 'react-router-dom';
 import { LogOut, Home } from 'lucide-react';
 
 // Import all dashboard components
@@ -78,11 +78,10 @@ function App() {
   };
 
   return (
-    <Router basename="/Fedf-hackathon/">
-      <div className="app-root">
-        {role && <Navigation role={role} user={user} onLogout={handleLogout} />}
+    <div className="app-root">
+      {role && <Navigation role={role} user={user} onLogout={handleLogout} />}
 
-        <Routes>
+      <Routes>
           {/* Public Routes */}
           <Route
             path="/"
@@ -125,12 +124,9 @@ function App() {
             }
           />
 
-          {/* Catch all route */}
-          <Route path="*" element={<Navigate to="/" replace />} />
-        </Routes>
-      </div>
-    </Router>
+        {/* Catch all route */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </div>
   );
-}
-
-export default App;
+}export default App;

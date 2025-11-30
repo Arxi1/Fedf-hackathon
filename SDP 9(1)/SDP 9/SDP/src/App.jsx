@@ -79,6 +79,9 @@ function App() {
 
   return (
     <div className="app-root">
+      <div style={{ padding: '20px', textAlign: 'center', fontSize: '24px', color: '#667eea', fontWeight: 'bold' }}>
+        FoodConnect App is Loading...
+      </div>
       {role && <Navigation role={role} user={user} onLogout={handleLogout} />}
 
       <Routes>
